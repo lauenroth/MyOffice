@@ -1,0 +1,32 @@
+<template name="MasterLayout">
+
+  {{#if currentUser}}
+    <header class="main">
+      <i class="material-icons toggle-menu">menu</i>
+      
+      <h1><a href="/"><i class="material-icons logo">&#xE886;</i> [Team Name]</a> <i class="material-icons change-team">&#xE5C5;</i></h1>
+      
+      <!-- <i class="material-icons">&#xE0B7;</i> -->
+      <div class="account">
+        <i class="material-icons">&#xE853;</i>
+        <ul>
+          <li><a href="/profile"><i class="material-icons">&#xE7FD;</i> Profile</a></li>
+          <li><a href="#logout" class="logout"><i class="material-icons">&#xE8FB;</i> Log out</a></li>
+        </ul>
+      </div>
+      <div class="search">
+        <i class="material-icons">&#xE8B6;</i>
+        <input type="search" placeholder="Search...">
+      </div>
+    </header>
+
+    {{> menu}}
+    <main>
+      {{> yield}}
+    </main>
+    <div id="modal"></div>
+  {{else}}
+    {{> login}}
+  {{/if}}
+  
+</template>

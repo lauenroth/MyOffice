@@ -1,0 +1,53 @@
+<template name="Notes">
+
+  <div class="notes">
+    {{#each notes}}
+    <div class="card">
+      <h3>{{title}}</h3>
+      <div>{{note}}</div>
+    </div>
+    {{/each}}
+    <div class="card">
+      <h3>Test</h3>
+      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae repellat culpa recusandae, suscipit, nihil architecto sapiente laboriosam provident eius laudantium ipsa, perspiciatis. Non eligendi officia, soluta vitae est quibusdam optio.</div>
+    </div>
+    <div class="card">
+      <h3>Test</h3>
+      <div>short</div>
+    </div>
+    <div class="card">
+      <h3>Test</h3>
+      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae repellat culpa recusandae, suscipit, nihil architecto sapiente laboriosam provident eius laudantium ipsa, perspiciatis. Non eligendi officia, soluta vitae est quibusdam optio.</div>
+    </div>
+    <div class="card">
+      <h3>Test</h3>
+      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae repellat culpa recusandae, suscipit, nihil architecto sapiente laboriosam provident eius laudantium ipsa, perspiciatis. Non eligendi officia, soluta vitae est quibusdam optio.</div>
+    </div>
+    <div class="card">
+      <h3>Test</h3>
+      <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae repellat culpa recusandae, suscipit, nihil architecto sapiente laboriosam provident eius laudantium ipsa, perspiciatis. Non eligendi officia, soluta vitae est quibusdam optio.</div>
+    </div>
+  </div>
+
+  <a href="#" class="add-btn"><i class="material-icons">&#xE147;</i></a>
+
+  <div class="side-form add">
+    <header>
+      <i class="material-icons close">&#xE5CD;</i>
+      <h3>Create new note</h3>
+    </header>
+    {{> quickForm collection="Notes" id="insertNoteForm" type="insert" buttonContent="Add note" omitFields="createdAt,userId"}}
+  </div>
+
+  <div class="side-form update">
+    <header>
+      <i class="material-icons close">&#xE5CD;</i>
+      <h3>Update note</h3>
+    </header>
+    {{> quickForm collection="Notes" id="updateNoteForm" type="update" doc=editNote buttonContent="Save note" omitFields="createdAt,userId"}}
+    <div class="delete">
+      <button class="btn btn-danger delete-task">Delete</button>
+    </div>
+  </div>
+
+</template>

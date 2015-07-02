@@ -1,0 +1,60 @@
+<template name="Tasks">
+
+  <section class="tasks">
+    <form id="new-task"><input type="text" placeholder="Add a new task"></form>
+    <ul>
+    {{#each dueDateTasks}}
+      <li>
+        <i class="material-icons done">&#xE835;</i>
+        <div class="due-date">{{formatDate dueDate}}</div>
+        <div class="summary">{{summary}} <span class="description">{{description}}</span></div>
+      </li>
+    {{/each}}
+    {{#each otherTasks}}
+      <li>
+        <i class="material-icons done">&#xE835;</i>
+        <div class="summary">{{summary}} <span class="description">{{description}}</span></div>
+      </li>
+    {{/each}}
+    </ul>
+
+    {{#if numCompletedTasks}}
+    <hr>
+    <h5>Completed tasks: {{numCompletedTasks}}</h5>
+
+    <ul class="done">
+      {{#each doneTasks}}
+      <li>
+        <i class="material-icons done">&#xE834;</i>
+        <div class="summary">{{summary}}</div>
+      </li>
+      {{/each}}
+    </ul>
+
+    {{/if}}
+    
+  </section>
+
+  
+  <a href="#" class="add-btn"><i class="material-icons">&#xE147;</i></a>
+
+  <div class="side-form add">
+    <header>
+      <i class="material-icons close">&#xE5CD;</i>
+      <h3>Create new task</h3>
+    </header>
+    {{> quickForm collection="Tasks" id="insertTaskForm" type="insert" buttonContent="Add task" omitFields="createdAt,userId"}}
+  </div>
+
+  <div class="side-form update">
+    <header>
+      <i class="material-icons close">&#xE5CD;</i>
+      <h3>Update task</h3>
+    </header>
+    {{> quickForm collection="Tasks" id="updateTaskForm" doc=editTask type="update" buttonContent="Save" omitFields="createdAt,userId"}}
+    <div class="delete">
+      <button class="btn btn-danger delete-task">Delete</button>
+    </div>
+  </div>
+
+</template>

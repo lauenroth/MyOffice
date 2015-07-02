@@ -1,0 +1,101 @@
+header.login h1 {
+  padding-left: 0;  
+}
+
+#login {
+  left: 0;
+  margin: 70px auto;
+  max-width: 380px;
+  padding: 0 15px;
+  position: relative;
+  transition: .3s;
+  width: 100%;
+  z-index: 10;
+
+  input {
+    border: none;
+    border-bottom: 1px solid #eee;
+    height: 60px;
+    padding: 0 20px 0 40px;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+  .material-icons {
+    color: #999;
+    position: absolute;
+    margin-left: 10px;
+    margin-top: 15px;
+  }
+
+  button {
+    background-color: #0A1D2D;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+    transition: .3s;
+    width: 100%;
+
+    &:hover {
+      background-color: lighten(#0A1D2D, 10);
+    }
+  }
+
+  a {
+    color: #0A1D2D;
+    display: block;
+    text-decoration: none;
+  }
+
+  div.register,
+  div.login {
+    height: 1px;
+    opacity: 0;
+    overflow: hidden;
+    transition: .3s;
+  }
+
+  &.login .login,
+  &.register .register {
+    opacity: 1;
+    height: 60px;
+  }
+  
+}
+
+#forgot-password {
+  text-align: center;
+}
+
+#login-register {
+  bottom: 0;
+  left: 15px;
+  position: absolute;
+  right: 15px;
+  text-align: center;
+
+  a {
+    color: #0A1D2D;
+    display: block;
+    text-decoration: none;
+  }
+}
+#back-to-login,
+#no-account {
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+#login-register #back-to-login {
+  display: none;
+}
+
+@media (min-height: 650px) and (min-width: 500px) {
+  #login {
+    margin: 150px auto;
+  }
+}

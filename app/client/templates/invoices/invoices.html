@@ -1,0 +1,10 @@
+<template name="Invoices">
+  
+  <a href="#" class="add-btn"><i class="material-icons">&#xE147;</i></a>
+
+  <div class="side-form">
+    <i class="material-icons close">&#xE5CD;</i>
+    {{> quickForm collection="Invoices" id="insertInvoiceForm" type="insert" buttonContent="Add invoice" omitFields="createdAt,userId"}}
+  </div>
+
+</template>

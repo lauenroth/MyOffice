@@ -1,0 +1,25 @@
+<template name="menu">
+
+  <nav class="main">
+    <h4>Main</h4>
+    <ul class="main">
+      <li><a href="/" class="{{active '/'}}"><i class="material-icons">home</i> Dashboard</a></li>
+      <li><a href="/tasks" class="{{active '/tasks'}}"><i class="material-icons">&#xE862;</i> Tasks</a></li>
+      <li><a href="/clients" class="{{active '/clients'}}"><i class="material-icons">&#xE7FB;</i> <span>Clients</span></a></li>
+      <li><a href="/calendar" class="{{active '/calendar'}}"><i class="material-icons">&#xE24F;</i> Calendar</a></li>
+      <li><a href="/notes" class="{{active '/notes'}}"><i class="material-icons">&#xE24C;</i> Notes</a></li>
+      <li><a href="/invoices" class="{{active '/invoices'}}"><i class="material-icons">&#xE84F;</i> Invoices</a></li>
+    </ul>
+
+    <h4>Teams</h4>
+    <ul class="groups">
+      <li><a href="#"><i class="red"></i> <span>Work</span></a></li>
+      <!-- <li><a href="#"><i class="purple"></i> <span>Family</span></a></li> -->
+      <li><a href="#"><i class="green"></i> <span>Friends</span></a></li>
+      <!-- <li><a href="#"><i class="yellow"></i> <span>Sport</span></a></li> -->
+      <li><a href="#"><i class="orange"></i> <span>Other</span></a></li>
+    </ul>
+  </nav>
+  <div class="menu-overlay"></div>
+
+</template>

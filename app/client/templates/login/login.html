@@ -1,0 +1,27 @@
+<template name="login">
+
+  <header class="main login">
+    <h1><i class="material-icons logo">&#xE886;</i> MyOffice</h1>
+  </header>
+
+  <form id="login" class="login">
+    <div class="register">
+      <i class="material-icons">person</i><input type="text" placeholder="Your name" disabled required>
+    </div>
+    
+    <i class="material-icons">email</i><input type="email" placeholder="Your email address" name="email" required>
+    <div class="register login">
+      <i class="material-icons">lock</i><input type="password" placeholder="Your password" required>
+    </div>
+
+    <button type="submit">Sign in</button>
+
+    <a id="forgot-password" href="#forgot-password">Forgot password?</a>
+  </form>
+
+  <div id="login-register">
+    <p id="no-account" href="#register">Don't have an account yet? Sign up</p>
+    <p id="back-to-login" href="#login">Already have an account? Sign in</p>
+  </div>
+
+</template>

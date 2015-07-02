@@ -1,0 +1,67 @@
+
+section.tasks {
+
+  #new-task {
+    input {
+      border: none;
+      border-radius: 4px;
+      margin-bottom: 10px;
+      padding: 10px;
+      width: 100%;
+    }
+  }
+
+  ul {
+    padding: 0;
+
+    &.done {
+
+      li {
+        opacity: .7;
+        transition: .3s;
+        text-decoration: line-through;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+    }
+  }
+
+  li {
+    background-color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    list-style: none;
+    margin: 0 0 10px;
+    padding: 10px;
+    transition: .3s;
+
+    i {
+      cursor: pointer;
+      float: left;
+      line-height: 20px;
+      transition: .3s;
+    }
+
+    .due-date {
+      font-size: 12px;
+      float: right;
+      color: #c33;
+      line-height: 20px;
+    }
+
+    .summary {
+      padding: 0 10px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+      .description {
+        color: #999;
+        margin-left: 10px;
+      }
+    }
+  }
+}

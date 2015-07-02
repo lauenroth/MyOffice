@@ -1,0 +1,406 @@
+$headerColor: #0A1D2D;
+
+body {
+  background-color: #E8EFF5;
+  color: #000;
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  margin: 0;
+  padding: 0;
+}
+
+input, button, textarea {
+  font-size: 1em;
+}
+
+pre {
+  font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+main {
+  margin-top: 50px;
+  margin-left: 175px;
+  padding: 20px;
+  transition: .3s;
+
+  @media (max-width: 625px) {
+    margin-left: 0;
+  }
+}
+
+#modal {
+  background-color: $headerColor;
+  display: none;
+  left: 0;
+  height: 100%;
+  opacity: .7;
+  position: fixed;
+  top: 0;
+  transition: opacity .3s;
+  width: 100%;
+  z-index: 1000;
+}
+.show-modal #modal {
+  display: block;
+  opacity: .7;
+}
+
+/* Header */
+header.main {
+  background: $headerColor;
+  // border-bottom: 1px dotted lighten($headerColor, 10);
+  color: #fff;
+  height: 50px;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 100;
+
+  .logo {
+    float: left;
+    font-size: 30px;
+    line-height: 50px;
+    padding: 0 10px;
+  }
+
+  h1 {
+    float: left;
+    font-size: 1.3em;
+    font-weight: normal;
+    line-height: 50px;
+    margin: 0;
+    padding-left: 5px;
+    // text-transform: uppercase;
+    transition: .3s;
+
+    a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    @media (max-width: 625px) {
+      padding-left: 55px;
+    }
+  }
+  .change-team {
+    cursor: pointer;
+    position: relative;
+    top: 5px;
+  }
+
+  .toggle-menu {
+    background-color: $headerColor;
+    border-right: 1px solid lighten($headerColor, 5);
+    cursor: pointer;
+    height: 50px;
+    left: -50px;
+    line-height: 50px;
+    position: absolute;
+    text-align: center;
+    transition: .3s;
+    width: 50px;
+
+    @media (max-width: 625px) {
+      left: 0;
+    }
+  }
+
+  .search {
+    float: right;
+
+    .material-icons {
+      cursor: pointer;
+      font-size: 30px;
+      line-height: 50px;
+      padding: 0 10px;
+    }
+
+    input {
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid #fff;
+      color: #fff;
+      opacity: 0;
+      padding: 5px;
+      position: relative;
+      top: -10px;
+      transition: .3s;
+      width: 0px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &.open input {
+      opacity: 1;
+      width: 150px;
+    }
+  }
+
+  .account {
+    float: right;    
+    text-align: right;
+
+    .material-icons {
+      cursor: pointer;
+      font-size: 30px;
+      line-height: 50px;
+      padding: 0 10px;
+    }
+
+    ul {
+      display: none;
+      margin: 0;
+      min-width: 150px;
+      padding: 0;
+      position: absolute;
+      right: 0;
+    }
+
+    &:hover ul {
+      display: block;
+    }
+
+    li {
+      background-color: $headerColor;
+      border-top: 1px dotted lighten($headerColor, 10);
+      list-style: none;
+    }
+
+    a {
+      color: #fff;
+      display: block;
+      line-height: 50px;
+      padding-right: 20px;
+      text-align: left;
+      text-decoration: none;
+
+      i {
+        float: left;
+      }
+    }
+  }
+
+
+  .location {
+    color: lighten($headerColor, 40);
+    line-height: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+
+
+/* General elements */
+
+.form-control {
+  height: 42px;
+  padding: 10px;
+}
+.btn {
+  min-width: 100px;
+}
+
+/* add item button */
+.add-btn {
+  bottom: 10px;
+  color: $headerColor;
+  position: fixed;
+  right: 10px;
+
+  i {
+    border-radius: 100%;
+    font-size: 50px;
+    box-shadow: 0 0 10px $headerColor;
+  }
+}
+
+/* Side form */
+.side-form {
+  background-color: $headerColor;
+  bottom: 0;
+  color: #fff;
+  max-width: 450px;
+  overflow-y: auto;
+  padding-bottom: 20px;
+  position: fixed;
+  right: -450px;
+  top: 50px;
+  transition: .3s;
+  width: 100%;
+  z-index: 1050;
+
+  @media (max-width: 450px) {
+    top: 0;
+  }
+
+  header {
+    background-color: $headerColor;
+    padding: 0 20px;
+
+    @media (max-width: 450px) {
+      right: -450px;
+      padding: 0;
+      position: fixed;
+      border-bottom: 1px solid lighten($headerColor, 5);
+      top: 0;
+      transition: .3s;
+      width: 100%;
+    }
+
+    h3 {
+      display: block;
+      margin: 0 0 10px;
+      padding: 10px 0;
+
+      @media (max-width: 450px) {
+        font-size: 1em;
+        line-height: 45px;
+        margin: 0;
+        padding: 0 60px;
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .close {
+    color: #fff;
+    cursor: pointer;
+    float: right;
+    margin-right: -10px;
+    opacity: 1;
+    padding: 10px;
+
+    @media (max-width: 450px) {
+      border-right: 1px solid lighten($headerColor, 5);
+      float: left;
+      margin-right: 0;
+    }
+  }
+
+  form {
+    padding: 0 20px 20px;
+    clear: both;
+
+    @media (max-width: 450px) {
+      margin-top: 45px;
+      padding: 20px;
+    }
+  }
+
+  .btn-primary {
+    float: right;
+
+    @media (max-width: 450px) {
+      background-color: $headerColor!important;
+      border: none;
+      border-left: 1px solid lighten($headerColor, 5)!important;
+      border-radius: 0;
+      display: block;
+      float: none;
+      height: 44px;
+      position: fixed;
+      top: 0;
+      transition: .3s;
+      right: -450px;
+    }
+  }
+
+  .delete {
+    padding: 0 20px;
+    position: relative;
+    top: -20px;
+
+    .btn {
+      float: left;
+
+      @media (max-width: 450px) {
+        width: 100%; 
+      }
+    }
+
+    
+  }
+}
+
+.show-add-form .side-form.add,
+.show-update-form .side-form.update {
+  right: 0;
+
+  button,
+  header {
+    right: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .show-add-form main,
+  .show-update-form main {
+    padding-right: 470px;
+  }   
+}
+
+
+/* error messages in form */
+.form-group {
+  position: relative;
+}
+form .help-block {
+  position: absolute;
+  right: 0;
+  top: -4px;
+}
+
+
+
+/* Tables */
+.table {
+  padding: 20px;
+  width: 100%;
+
+  .center {
+    text-align: center;
+  }
+
+  th {
+    background-color: $headerColor;
+    color: #fff;
+  }
+
+  th,
+  td {
+    padding: 10px;
+  }
+
+  td {
+    background-color: #fff;
+
+    a {
+      color: $headerColor;
+      display: block;
+      margin: -10px;
+      padding: 10px;
+      text-decoration: none;
+    }
+  }
+  tr:hover td {
+    background-color: #fafcfe;
+  }
+}
+
+
+/* Cards */
+.card {
+  background-color: #fff;
+  margin-bottom: 20px;
+  padding: 20px;
+
+  h2 {
+    margin: 0 0 20px;
+  }
+}

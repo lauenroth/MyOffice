@@ -1,0 +1,34 @@
+<template name="Clients">
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Company</th>
+        <th>Name</th>
+      </tr>
+    </thead>
+    <tbody>
+    {{#each clients}}
+      <tr>
+        <td class="center"><a href="/clients/{{_id}}">{{id}}</a></td>
+        <td><a href="/clients/{{_id}}">{{company}}</a></td>
+        <td><a href="/clients/{{_id}}">{{firstName}} {{lastName}}</a></td>
+      </tr>
+    {{/each}}
+    </tbody>
+  </table>
+
+
+
+  <a href="#" class="add-btn"><i class="material-icons">&#xE147;</i></a>
+
+  <div class="side-form add">
+    <header>
+      <i class="material-icons close">&#xE5CD;</i>
+      <h3>Create new client</h3>
+    </header>
+    {{> quickForm collection="Clients" id="insertClientForm" type="insert" buttonContent="Add client" omitFields="createdAt,userId"}}
+  </div>
+
+</template>
