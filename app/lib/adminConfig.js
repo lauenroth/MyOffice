@@ -6,6 +6,7 @@ AdminConfig = {
     Notes: {},
     // Events: {},
     Invoices: {},
-    Tasks: {}
+    Tasks: {},
+    Teams: {}
   } 
 };

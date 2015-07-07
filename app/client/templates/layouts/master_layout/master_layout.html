@@ -5,6 +5,12 @@
       <i class="material-icons toggle-menu">menu</i>
       
       <h1><a href="/"><i class="material-icons logo">&#xE886;</i> [Team Name]</a> <i class="material-icons change-team">&#xE5C5;</i></h1>
+      <ul class="teams">
+        {{#each myTeams}}
+        <li><a href="/teams/{{_id}}">{{name}}</a></li>
+        {{/each}}
+        <li class="add"><i class="material-icons">&#xE147;</i> Create new team</li>
+      </ul>
       
       <!-- <i class="material-icons">&#xE0B7;</i> -->
       <div class="account">

@@ -8,18 +8,20 @@ TeamSchema = new SimpleSchema({
     label: 'Name'
   },
 
-  description: {
-    type: String,
-    label: 'Description',
-    optional: true,
-    autoform: {
-      rows: 6
-    }
+  members: {
+    type: [String],
+    label: 'Members'
   },
 
-  members: {
-    type: Object,
-    label: 'Members',
+  invited: {
+    type: [String],
+    label: 'Email addresses of people who are invited to join the team',
+    optional: true
+  },
+
+  requested: {
+    type: [String],
+    label: 'User Ids of people who requested to join the team',
     optional: true
   },
 

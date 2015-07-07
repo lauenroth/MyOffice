@@ -49,14 +49,13 @@ main {
 /* Header */
 header.main {
   background: $headerColor;
-  // border-bottom: 1px dotted lighten($headerColor, 10);
   color: #fff;
   height: 50px;
   left: 0;
   position: fixed;
   right: 0;
   top: 0;
-  z-index: 100;
+  z-index: 200;
 
   .logo {
     float: left;
@@ -88,6 +87,29 @@ header.main {
     cursor: pointer;
     position: relative;
     top: 5px;
+  }
+  .teams {
+    background-color: $headerColor;
+    border: 1px solid lighten($headerColor, 5);
+    border-top: none;
+    display: none;
+    left: 45px;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50px;
+
+    li {
+      line-height: 50px;
+      list-style: none;
+      padding: 0 10px;
+
+      i {
+        margin-right: 5px;
+        position: relative;
+        top: 6px;
+      }
+    }
   }
 
   .toggle-menu {

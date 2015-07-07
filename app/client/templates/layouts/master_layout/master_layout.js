@@ -1,9 +1,17 @@
+Meteor.subscribe('myTeams');
+
 Template.MasterLayout.helpers({
+  myTeams: function() {
+    return Teams.find({members: Meteor.userId});
+  }
 });
 
 Template.MasterLayout.events({
-  "click .toggle-menu": function() {
+  'click .toggle-menu': function() {
     $('body').toggleClass('show-menu');
+  },
+  'click .change-team': function() {
+    $('header.main .teams').slideToggle('fast');
   },
   'click .search i': function(e) {
     var searchBox = $(e.currentTarget).parent();

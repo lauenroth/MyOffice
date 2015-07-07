@@ -1,0 +1,20 @@
+<template name="team">
+  
+  <h1>{{name}}</h1>
+
+  {{#if isMember}}
+  <h2>Members</h2>
+  <ul>
+  {{#each members}}
+    <li>Member 1{{this}}</li>
+  {{/each}}
+  </ul>
+  {{/if}}
+  
+  {{#if isAdmin admin}}
+  <h3>Invite team members</h3>
+  <p>You can send this link to others to join your team:</p>
+  <p><a href="{{joinLink}}">{{joinLink}}</a></p>
+  {{/if}}
+  
+</template>
