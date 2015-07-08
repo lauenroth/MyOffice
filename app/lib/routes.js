@@ -24,7 +24,7 @@ Router.route('/profile');
 Router.route('/teams/join/:_id', function() {
   var team = Teams.findOne({_id: this.params._id});
   // console.log(team);
-  if (team && _.contains(team.invited, Meteor.user().emails[0].address) ) {
+  if (team && (_.contains(team.invited, Meteor.user().emails[0].address) || _.contains(team.members, Meteor.userId() ) ) ) {
     this.render('joinTeam', {data: team});
   }
   else {

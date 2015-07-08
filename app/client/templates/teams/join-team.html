@@ -1,7 +1,16 @@
 <template name="joinTeam">
 
+  {{#if alreadyMember}}
+
+  <h2>You are already a member of <strong>{{name}}</strong></h2>
+  <p><a href="/teams/{{_id}}" class="btn btn-default">Go to team page</a></p>
+
+  {{else}}
+
   <h2>Join the team <strong>{{name}}</strong></h2>
 
   <button class="btn btn-default join">Join</button>
+
+  {{/if}}
 
 </template>

@@ -7,3 +7,9 @@ Template.joinTeam.events({
     Teams.update({_id: this._id}, {$pull: {invited: email}, $push: {members: userId} });
   }
 });
+
+Template.joinTeam.helpers({
+  'alreadyMember': function() {
+    return _.contains(this.members, Meteor.userId());
+  }
+});

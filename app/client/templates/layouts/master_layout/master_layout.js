@@ -1,4 +1,8 @@
-Meteor.subscribe('myTeams');
+Tracker.autorun(function () {
+  Meteor.subscribe('userProfiles');
+  Meteor.subscribe('myTeams');
+});
+
 
 Template.MasterLayout.helpers({
   myTeams: function() {

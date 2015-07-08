@@ -6,7 +6,7 @@
   <h2>Members</h2>
   <ul>
   {{#each members}}
-    <li>Member 1{{this}}</li>
+    <li><a href="/profile/{{this}}">{{usernameFromId this}}</a></li>
   {{/each}}
   </ul>
   {{/if}}
