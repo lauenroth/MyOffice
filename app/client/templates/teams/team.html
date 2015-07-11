@@ -13,8 +13,16 @@
   
   {{#if isAdmin admin}}
   <h3>Invite team members</h3>
-  <p>You can send this link to others to join your team:</p>
-  <p><a href="{{joinLink}}">{{joinLink}}</a></p>
+  <form id="invite">
+    <div class="form-group">
+      <input type="email" class="form-control" placeholder="E-mail address" required> 
+    </div>
+    <button type="submit" class="btn btn-default">Send invite</button>
+  </form>
+  <p><a href="{{joinLink}}">{{joinLink}}</a> <i class="material-icons" title="Copy to clipboard">&#xE14D;</i></p>
+
+  <h3>Danger zone</h3>
+  <button class="btn btn-danger delete">Delete team</button>
   {{/if}}
   
 </template>

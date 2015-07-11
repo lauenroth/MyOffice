@@ -21,6 +21,8 @@ Router.route('/invoices');
 
 Router.route('/profile');
 
+Router.route('/teams/add', {name: 'addTeam'});
+
 Router.route('/teams/join/:_id', function() {
   var team = Teams.findOne({_id: this.params._id});
   // console.log(team);

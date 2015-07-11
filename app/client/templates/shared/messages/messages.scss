@@ -1,0 +1,17 @@
+
+#notifications {
+  bottom: 15px;
+  position: fixed;
+  left: 0;
+  text-align: center;
+  width: 100%;
+  z-index: 1050;
+
+  .notification {
+    background-color: #0A1D2D;
+    border-radius: 4px;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 10px; 
+  }
+}

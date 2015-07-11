@@ -1,12 +1,13 @@
 Tracker.autorun(function () {
   Meteor.subscribe('userProfiles');
-  Meteor.subscribe('myTeams');
 });
+
+Meteor.subscribe('myTeams');
 
 
 Template.MasterLayout.helpers({
   myTeams: function() {
-    return Teams.find({members: Meteor.userId});
+    return Teams.find({members: Meteor.userId()});
   }
 });
 
@@ -16,6 +17,10 @@ Template.MasterLayout.events({
   },
   'click .change-team': function() {
     $('header.main .teams').slideToggle('fast');
+  },
+  'click .teams a': function() {
+    console.log('team chosen');
+    $('header.main .teams').hide();
   },
   'click .search i': function(e) {
     var searchBox = $(e.currentTarget).parent();
