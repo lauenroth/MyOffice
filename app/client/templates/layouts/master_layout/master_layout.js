@@ -7,7 +7,13 @@ Meteor.subscribe('myTeams');
 
 Template.MasterLayout.helpers({
   myTeams: function() {
-    return Teams.find({members: Meteor.userId()});
+    return Teams.find({members: Meteor.userId()}, {sort: {name: 1}});
+  },
+  currentTeam: function() {
+    var user = Meteor.user();
+    if (user.profile.defaultTeam) {
+      return user.profile.defaultTeam;
+    }
   }
 });
 
@@ -19,7 +25,6 @@ Template.MasterLayout.events({
     $('header.main .teams').slideToggle('fast');
   },
   'click .teams a': function() {
-    console.log('team chosen');
     $('header.main .teams').hide();
   },
   'click .search i': function(e) {

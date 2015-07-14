@@ -2,6 +2,11 @@
 /* Teams: Event Handlers */
 /*****************************************************************************/
 Template.team.events({
+  'click .switch': function() {
+    Meteor.users.update({_id: Meteor.userId()}, {$set: {"profile.defaultTeam": this._id} });
+    notification('Switched to team <strong>' + this.name + '</strong>');
+    Router.go('/');
+  },
   'click .delete': function() {
     var confirmed = confirm('Do you really wanna delete the team ' + this.name + '?');
     if (confirmed) {

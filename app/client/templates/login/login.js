@@ -7,7 +7,7 @@ Template.login.events({
     var password = $('input[type="password"]').val();
 
     var firstname = name.indexOf(' ') !== -1 ? name.substr(0, name.lastIndexOf(' ') ) : name;
-    var lastname = name.substr(firstname.length);
+    var lastname = name.substr(firstname.length + 1);
 
     switch ($('form').attr('class') ) {
 

@@ -4,7 +4,7 @@
     <header class="main">
       <i class="material-icons toggle-menu">menu</i>
       
-      <h1><a href="/"><i class="material-icons logo">&#xE886;</i> [Team Name]</a> <i class="material-icons change-team">&#xE5C5;</i></h1>
+      <h1><a href="/"><i class="material-icons logo">&#xE886;</i> {{teamnameFromId currentTeam}}</a> <i class="material-icons change-team">&#xE5C5;</i></h1>
       <ul class="teams">
         {{#each myTeams}}
         <li><a href="/teams/{{_id}}">{{name}}</a></li>

@@ -14,7 +14,7 @@ notification = function(message, timeout) {
   
   var notification = $('<div/>')
     .addClass('notification')
-    .text(message);
+    .html(message);
   
   notifications.append(notification);
   notification.fadeIn();

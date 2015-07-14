@@ -1,5 +1,9 @@
 <template name="team">
   
+  {{#if isMember}}
+  <button class="btn btn-default switch">Choose team</button>
+  {{/if}}
+  
   <h1>{{name}}</h1>
 
   {{#if isMember}}
